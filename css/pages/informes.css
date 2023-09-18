@@ -1,0 +1,288 @@
+*{--magenta: #ee3d8f;
+    --celeste: #37bbed;
+    --morado: #9283be;
+    --gris-claro: #9e9e9e;
+    --titulos: #333;
+    --textos: #333;
+    --fondo-pantalla: rgb(235, 245, 251);
+    --fondo-Cabecera: #18a0fb;
+    --fondo-Footer: #333;
+    --fondo-Menu: #333;
+    --texto-footer: #9e9e9e;
+    --titulo-Grilla: #727272;
+    --borde-inferior-Grilla: #727272;
+    --borde-Grilla: #c5c5c5;
+    --grafica-amarillo: rgb(252, 210, 0);
+    --grafica-amarillo-claro: rgba(252, 210, 0, 0.3);
+    --grafica-celeste: rgb(0, 169, 232);
+    --grafica-celeste-claro: rgba(0, 169, 232, 0.3);
+    --grafica-bordo: rgb(171, 40, 40);
+    --grafica-bordo-claro: rgba(171, 40, 40, 0.3);
+    --grafica-lila: rgb(112, 76, 159);
+    --grafica-lila-claro: rgba(112, 76, 159, 0.5);
+    --grafica-lila2: rgb(77, 46, 110);
+    --grafica-lila2-claro: rgba(77, 46, 110, 0.5);
+    --grafica-gris: rgb(128, 128, 128);
+    --grafica-gris-claro: rgb(128, 128, 128, 0.5);
+    --grafica-verde: rgb(102, 171, 60);
+    --grafica-verde-claro: rgba(102, 171, 60, 0.5);
+    --mensaje-usuario-amarillo: #ffc107;
+    --mensaje-usuario-verde: #28a745;
+    --mensaje-usuario-rojo: #dc3545;
+    
+    }
+     body{
+        background-color: white;
+     }
+    
+    .header-page{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        background-color: var(--fondo-Cabecera);
+        color: white;
+        width: 100%;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+    li{
+        list-style-type: none;
+        margin-left: 1%;
+    }
+    
+    header li a{
+        text-decoration: none;
+        color: #FFF;
+    }
+    
+    .nav-items{
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 6px;
+    }
+    
+    
+    
+    .nav-consultar{
+        margin-top: 3px;
+        color: #FFF;
+    }
+    
+    .nav-paso {
+        background-color: var(--magenta);
+        border-radius: 8px;
+        padding: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #FFF;
+        width: 90px;
+        height: 30px;
+    }
+    .nav-paso:hover {
+        background-color: var(--gris-claro);
+      }
+    
+      .nav-generales {
+        background-color: var(--celeste);
+        border-radius: 8px;
+        padding: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #FFF;
+        width: 90px;
+        height: 30px;
+      }
+    
+      .nav-inicio {
+        background-color:#333;
+        border-radius: 8px;
+        padding: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #FFF;
+        width: 90px;
+        height: 30px;
+        margin-left: 1100px;
+      }
+    
+    .nav-inicio:hover {
+      background-color: var(--gris-claro);
+    }
+      
+      .nav-generales:hover {
+        background-color: var(--gris-claro);
+      }
+    
+    .menu{
+    
+      padding-top: 8px;
+      background-color: var(--fondo-Menu);
+      width: 100%;
+        
+    }
+    
+    .logo{
+    
+    width: 150px; 
+    padding-left: 5%;
+    }
+
+.mensajesUsuario-verde {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--grafica-verde);
+}
+
+.mensajesUsuario-amarillo {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+    background-color: var(--grafica-amarillo);
+  }
+
+  .mensajesUsuario-rojo {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+    background-color: var(--grafica-bordo);
+  }
+  .grilla {
+    width: 1024px;
+
+    
+    background-color: rgb(250, 250, 250);
+  }
+
+  .tabla-contenedor{
+    margin: 0 auto 50px auto;
+    border: 2px var(--borde-Grilla);
+    border-top-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+    border-collapse: collapse;
+    width: fit-content;
+    height: 500px;
+    overflow: auto;
+  }
+  
+  /* Estilos para la cabecera (THEADER) */
+  .grilla thead {
+    text-align: center;
+    color: var(--titulo-Grilla);
+    position: sticky;
+    top: 0;
+    background-color:rgb(250, 250, 250);
+  }
+  
+  .grilla thead th {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--borde-inferior-Grilla);
+  
+   
+  }
+  
+  .mesa-escrutada {
+    background-color: var(--celeste); 
+    border-radius: 10px;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    color: #FFF;
+  }
+
+
+   
+
+  .grilla-provincia{
+    width: 10%;
+  }
+
+
+  .texto-elecciones-chico{
+    font-size: 12px;
+    color: var(--textos); 
+    font-weight: bold;
+    
+  }
+
+  .texto-path-chico{
+
+    font-size: 11px;
+    color: var(--celeste);
+    
+  }
+
+    footer{
+        background-color: var(--fondo-Footer);
+    color: var(--texto-footer);
+    
+    }
+    
+    .imagen1{
+       height: 40%;
+       width: 40%;
+       margin-right: 5%;
+       
+    }
+    .imagen2{
+        height: 40%;
+        width: 40%;
+       
+    }
+    .imagen3{
+        height: 40%;
+        width: 40%;
+    
+    }
+    footer{
+        display: flex;
+        flex-direction: row;
+        height: 150px;
+        justify-content: right;
+    }
+    .imagenesFooter{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        margin-right: 1%;
+        margin-top: 2%;
+        
+    }
+    .textoFooter{
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        margin-top: 1.4%;
+    }
+    
+  
