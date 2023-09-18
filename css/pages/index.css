@@ -31,8 +31,13 @@
 --mensaje-usuario-rojo: #dc3545;
 
 }
-header {
-    padding: 0.5em;
+ body{
+    background-color: white;
+ }
+
+.header-page{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     background-color: var(--fondo-Cabecera);
     color: white;
     width: 100%;
@@ -40,22 +45,95 @@ header {
     margin-right: auto;
     margin-bottom: auto;
     margin-left: auto;
-    width: 98%;
 }
+
+li{
+    list-style-type: none;
+    margin-left: 1%;
+}
+
+header li a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.nav-items{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 6px;
+}
+
+
+
+.nav-consultar{
+    margin-top: 3px;
+    color: #FFF;
+}
+
+.nav-paso {
+    background-color: var(--magenta);
+    border-radius: 8px;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFF;
+    width: 90px;
+    height: 30px;
+}
+.nav-paso:hover {
+    background-color: var(--gris-claro);
+  }
+
+  .nav-generales {
+    background-color: var(--celeste);
+    border-radius: 8px;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFF;
+    width: 90px;
+    height: 30px;
+  }
+
+  .nav-informes {
+  border-radius: 15px;
+  border: 1px solid white;
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFF;
+  background-color: #333;
+  width: 90px;
+  height: 30px;
+  }
+
+.nav-informes:hover {
+  background-color: var(--gris-claro);
+}
+  
+  .nav-generales:hover {
+    background-color: var(--gris-claro);
+  }
+
 .menu{
 
-
-
-padding-top: 20px;
-background-color: var(--fondo-Menu);
-width: 100%;
-
+  padding-top: 8px;
+  background-color: var(--fondo-Menu);
+  width: 100%;
+    
 }
 
 .logo{
-    background-image: url('Logo_DINE_negativo.png');
+
 width: 150px; 
-height: auto;
 padding-left: 5%;
 }
 
@@ -68,6 +146,7 @@ color: var(--texto-footer);
 .imagen1{
    height: 40%;
    width: 40%;
+   margin-right: 5%;
    
 }
 .imagen2{
@@ -91,50 +170,76 @@ footer{
     flex-direction: row;
     justify-content: left;
     margin-right: 1%;
-    margin-top: 1%;
+    margin-top: 2%;
     
 }
 .textoFooter{
     display: flex;
     flex-direction: row;
     width: 60%;
+    margin-top: 1.4%;
 }
 
 .pasoBoton{
-
     background-color: var(--magenta);
     border-radius: 10px;
     margin: 25px;
-    height: 100px;
     width: 400px;
+    height: 100px;
     padding: 1rem;
-    color: #FFF;
+    font-family: Arial, sans-serif;
     font-size: 28px;
-    text-align: left;
-    justify-content: center;
-    align-items: center;
-    display: inline-block; /* Cambiado de flex a inline-block */
-    vertical-align: top; /* Alineación vertical superior */
+    color: #FFF;
+  
+    
 }
+.pasoBoton a{
+
+    
+}
+
+
 
 .pasoBoton:hover {
     background-color: var(--gris-claro);
   }
  .generalesBoton {
-     background-color: var(--celeste);
+   
+    background-color: var(--celeste);
   border-radius: 10px;
   margin: 25px;
   height: 100px;
   width: 400px;
   padding: 1rem;
-  color: #FFF;
+  font-family: Arial, sans-serif;
   font-size: 28px;
-  text-align: center;
-  display: inline-block; /* Cambiado de flex a inline-block */
-    vertical-align: top; /* Alineación vertical superior */
+  color: #FFF;
   }
   
 .generalesBoton:hover {
     background-color: var(--gris-claro);
   }
 
+#sec-contenido{
+    margin-left: 18%;
+}
+.sec-titulo{
+    display: flex;
+    flex-direction: row;
+}
+.sec-h2{
+    width: 20%;
+    margin-left: 7%
+}
+.sec-titulo p{
+    color: var(--textos);
+width: 63%;
+margin-left: 7%
+}
+.sec-img{
+    width: 30%;
+    margin-left: 5%
+}
+.texto-contenido{
+    margin-left: 7%
+}
