@@ -83,6 +83,7 @@
         color: #FFF;
         width: 90px;
         height: 30px;
+        cursor: pointer;
     }
     .nav-paso:hover {
         background-color: var(--gris-claro);
@@ -99,6 +100,7 @@
         color: #FFF;
         width: 90px;
         height: 30px;
+        cursor: pointer;
       }
     
       .nav-inicio {
@@ -113,6 +115,7 @@
         width: 90px;
         height: 30px;
         margin-left: 1100px;
+        cursor: pointer;
       }
     
     .nav-inicio:hover {

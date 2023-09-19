@@ -83,6 +83,7 @@ header li a{
     color: #FFF;
     width: 90px;
     height: 30px;
+    cursor: pointer;
 }
 .nav-paso:hover {
     background-color: var(--gris-claro);
@@ -99,6 +100,7 @@ header li a{
     color: #FFF;
     width: 90px;
     height: 30px;
+    cursor: pointer;
   }
 
   .nav-informes {
@@ -113,6 +115,7 @@ header li a{
   background-color: #333;
   width: 90px;
   height: 30px;
+  cursor: pointer;
   }
 
 .nav-informes:hover {
@@ -190,6 +193,7 @@ footer{
     font-family: Arial, sans-serif;
     font-size: 28px;
     color: #FFF;
+    cursor: pointer;
   
     
 }
@@ -210,6 +214,7 @@ footer{
   font-family: Arial, sans-serif;
   font-size: 28px;
   color: #FFF;
+  cursor: pointer;
   }
   
 .generalesBoton:hover {
