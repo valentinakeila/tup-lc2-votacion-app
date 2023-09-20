@@ -68,15 +68,61 @@ header li a {
 }
 
 
-
-.nav-consultar {
-    margin-top: 3px;
-    color: #FFF;
-
+.filtrar {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--textos);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
+    margin-right: 10px;
 }
 
-.nav-paso {
-    background-color: var(--magenta);
+
+.año {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    color: var(--celeste);
+    font-weight: bold;
+    outline: none;
+    margin-right: 20px;
+}
+
+.cargo {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    color: var(--celeste);
+    font-weight: bold;
+    outline: none;
+    margin-right: 20px;
+}
+
+.distrito {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    color: var(--celeste);
+    font-weight: bold;
+    outline: none;
+    margin-right: 20px;
+}
+
+.inicio {
+    background-color:#333;
     border-radius: 8px;
     padding: 5px;
     font-family: Arial, sans-serif;
@@ -87,11 +133,21 @@ header li a {
     width: 90px;
     height: 30px;
     cursor: pointer;
+    margin-left: 58%;
 }
 
-.nav-paso:hover {
+.inicio:hover {
     background-color: var(--gris-claro);
 }
+
+
+
+
+
+
+
+
+
 
 .nav-generales {
     background-color: var(--celeste);
@@ -107,24 +163,7 @@ header li a {
     cursor: pointer;
 }
 
-.nav-inicio {
-    background-color: #333;
-    border-radius: 8px;
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    color: #FFF;
-    width: 90px;
-    height: 30px;
-    margin-left: 1100px;
-    cursor: pointer;
-}
 
-.nav-inicio:hover {
-    background-color: var(--gris-claro);
-}
 
 .nav-generales:hover {
     background-color: var(--gris-claro);
@@ -199,10 +238,10 @@ header li a {
     cursor: pointer;
     height: 40px;
     width: 300px;
-    margin-right: 15%;
+    margin-right: 5%;
     margin-top: 2%;
-    
-    
+
+
 }
 
 .boton-agregar:hover {
@@ -263,10 +302,12 @@ header li a {
 
 }
 
-#recuadros{
+#recuadros {
     display: flex;
-    justify-content:center;
-    
+    justify-content: center;
+    margin-left: 5%;
+
+
 }
 
 
@@ -274,37 +315,39 @@ header li a {
     border-radius: 25px;
     border: 1px var(--borde-Grilla) solid;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    font-weight: bold; 
-  text-align: center; 
-  white-space: nowrap;
-  margin-right: 5%;
-  width: 20%;
-  height: 10%;
-  }
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    margin-right: 5%;
+    width: 25%;
+    overflow: scroll;
 
-.segundoTituloCuadro{
+}
+
+.segundoTituloCuadro {
     border-radius: 25px;
     border: 1px var(--borde-Grilla) solid;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
-    font-weight: bold;  
+    font-weight: bold;
     white-space: nowrap;
     margin-right: 5%;
     width: 20%;
     height: 10%;
-    
+
 }
 
-.tercerTituloCuadro{
+.tercerTituloCuadro {
     border-radius: 25px;
     border: 1px var(--borde-Grilla) solid;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     width: 20%;
     height: 10%;
-    text-align: center; 
+    text-align: center;
     font-weight: bold;
     white-space: nowrap;
     margin-right: 5%;
+    width: 25%;
 }
 
 
@@ -359,4 +402,116 @@ footer {
 .sec-titulo {
     margin-left: 18%;
     margin-top: 5%;
+}
+
+.chart-wrap {
+    --chart-width: 260px;
+    --grid-color: #aaa;
+    --bar-thickness: 25px;
+    --bar-rounded: 3px;
+    --bar-spacing: 10px;
+    font-family: sans-serif;
+    width: var(--chart-width);
+}
+
+.chart-wrap .title {
+    font-weight: bold;
+    padding: 1.8em 0 2.8em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
+.chart-wrap.horizontal .grid {
+    transform: rotate(-90deg);
+}
+
+.chart-wrap.horizontal .bar::after {
+    /* giramos las letras para horizontal*/
+    transform: rotate(45deg);
+    padding-top: 0px;
+    display: block;
+}
+
+.chart-wrap .grid {
+    margin-left: 50px;
+    position: relative;
+    padding: 5px 0 5px 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid var(--grid-color);
+    font-size: 10px;
+}
+
+/* posicionamos el % del gráfico*/
+.chart-wrap .grid::before {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: '0%';
+    position: absolute;
+    left: -0.5em;
+    top: -1.5em;
+}
+
+.chart-wrap .grid::after {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: '100%';
+    position: absolute;
+    right: -1.5em;
+    top: -1.5em;
+}
+
+/* giramos las valores de 0% y 100% para horizontal */
+.chart-wrap.horizontal .grid::before,
+.chart-wrap.horizontal .grid::after {
+    transform: rotate(90deg);
+}
+
+.chart-wrap .bar {
+    width: var(--bar-value);
+    height: var(--bar-thickness);
+    margin: var(--bar-spacing) 0;
+    background-color: var(--bar-color);
+    border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
+}
+
+.chart-wrap .bar:hover {
+    opacity: 0.7;
+}
+
+.chart-wrap .bar::after {
+    content: attr(data-name);
+    margin-left: 100%;
+    padding: 10px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/*barra de progreso*/
+.progress {
+    height: 5%;
+    width: 90%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-left: 5%;
+}
+
+.progress-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+
+}
+
+
+
+
+.progress-bar-text {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
 }
