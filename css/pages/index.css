@@ -198,6 +198,12 @@ footer{
     
 }
 
+.div-pasoBoton{
+    display: flex;
+}
+.div-pasoBoton-texto{
+    align-items: center;
+}
 
 
 .pasoBoton:hover {
@@ -215,10 +221,15 @@ footer{
   font-size: 28px;
   color: #FFF;
   cursor: pointer;
+  
   }
   
 .generalesBoton:hover {
     background-color: var(--gris-claro);
+  }
+
+  .div-generalesBoton{
+    display: flex;
   }
 
 #sec-contenido{
