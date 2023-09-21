@@ -33,21 +33,8 @@
 
 }
 
-body {
-    background-color: white;
-}
 
-.header-page {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    background-color: var(--fondo-Cabecera);
-    color: white;
-    width: 100%;
-    margin-top: 0;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-}
+
 
 li {
     list-style-type: none;
@@ -268,6 +255,8 @@ header li a {
 
 
 .mesa-escrutada {
+    display: flex;
+    flex-direction: flow;
     background-color: var(--celeste);
     border-radius: 10px;
     margin: 15px;
@@ -277,10 +266,14 @@ header li a {
     color: #FFF;
     font-size: 12px;
     flex-direction: row;
-
+}
+.mesa-escrutada p{
+    font-weight: bold;
 }
 
 .electores {
+    display: flex;
+    flex-direction: row;
     background-color: var(--magenta);
     border-radius: 10px;
     margin: 15px;
@@ -289,11 +282,15 @@ header li a {
     padding: 0.5rem 1rem;
     color: #FFF;
     font-size: 12px;
-
+    gap: 15%;
+    font-weight: bold;
 
 }
 
 .participacionEscrutado {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
     background-color: var(--morado);
     border-radius: 10px;
     margin: 15px;
@@ -365,53 +362,6 @@ header li a {
 }
 
 
-footer {
-    background-color: var(--fondo-Footer);
-    color: var(--texto-footer);
-
-}
-
-.imagen1 {
-    height: 40%;
-    width: 40%;
-    margin-right: 5%;
-
-}
-
-.imagen2 {
-    height: 40%;
-    width: 40%;
-
-}
-
-.imagen3 {
-    height: 40%;
-    width: 40%;
-
-}
-
-footer {
-    display: flex;
-    flex-direction: row;
-    height: 150px;
-    justify-content: right;
-}
-
-.imagenesFooter {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin-right: 1%;
-    margin-top: 2%;
-
-}
-
-.textoFooter {
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    margin-top: 1.4%;
-}
 
 .sec-titulo {
     margin-left: 14%;

@@ -29,23 +29,11 @@
 --mensaje-usuario-amarillo: #ffc107;
 --mensaje-usuario-verde: #28a745;
 --mensaje-usuario-rojo: #dc3545;
-
 }
- body{
-    background-color: white;
- }
 
-.header-page{
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    background-color: var(--fondo-Cabecera);
-    color: white;
-    width: 100%;
-    margin-top: 0;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-}
+
+ 
+
 
 li{
     list-style-type: none;
@@ -140,48 +128,7 @@ width: 150px;
 padding-left: 5%;
 }
 
-footer{
-    background-color: var(--fondo-Footer);
-color: var(--texto-footer);
 
-}
-
-.imagen1{
-   height: 40%;
-   width: 40%;
-   margin-right: 5%;
-   
-}
-.imagen2{
-    height: 40%;
-    width: 40%;
-   
-}
-.imagen3{
-    height: 40%;
-    width: 40%;
-
-}
-footer{
-    display: flex;
-    flex-direction: row;
-    height: 150px;
-    justify-content: right;
-}
-.imagenesFooter{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin-right: 1%;
-    margin-top: 2%;
-    
-}
-.textoFooter{
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    margin-top: 1.4%;
-}
 
 .pasoBoton{
     background-color: var(--magenta);
