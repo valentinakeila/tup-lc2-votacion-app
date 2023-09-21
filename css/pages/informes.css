@@ -181,6 +181,7 @@
     border-bottom-left-radius: 15px !important;
     border-bottom-right-radius: 15px!important;
     background-color: rgb(250, 250, 250);
+   
   }
 
   .tabla-contenedor{
@@ -191,7 +192,7 @@
     border-bottom-right-radius: 15px!important;
     border-collapse: collapse;
     width: fit-content;
-    height: 500px;
+    height: 400px;
     overflow: auto;
   }
   
@@ -344,8 +345,12 @@
 
 
 .sec-titulo{
-  margin-left: 18%;
+  margin-left: 10%;
   margin-top: 5%;
+}
+
+#sec-contenido{
+  padding-bottom: 50px;
 }
 
 
