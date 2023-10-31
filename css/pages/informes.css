@@ -197,7 +197,6 @@
     overflow: auto;
   }
   
-  
   /* Estilos para la cabecera (THEADER) */
   .grilla thead {
     text-align: center;
@@ -265,8 +264,8 @@
     text-align: left;
     background-color: var(--celeste); 
     border-radius: 10px;
-    width: 120px;
-    height: 70px;
+    width: 100px;
+    height: 60px;
     padding: 0.5rem 1rem;
     font-size: 12px;
     color: #FFF;
@@ -281,10 +280,10 @@
     flex-direction: row;
     font-weight: bold;
     text-align: left;
-    background-color: magenta;
+    background-color: var(--magenta);
     border-radius: 10px;
-    height: 70px;
-    width: 120px;
+    height: 60px;
+    width: 100px;
     padding: 0.5rem 1rem;
     font-family: Arial, sans-serif;
     color: #FFF;
@@ -302,13 +301,14 @@
     text-align: left;
     background-color: var(--morado);
     border-radius: 10px;
-    height: 70px;
-    width: 120px;
+    height: 62px;
+    width: 100px;
     padding: 0.5rem 1rem;
     font-family: Arial, sans-serif;
     color: #FFF;
     font-size: 12px;
     margin-left: 5px;
+   
   
   }
 
