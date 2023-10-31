@@ -12,11 +12,6 @@ body {
 }
 
 
-footer{
-  background-color: var(--fondo-Footer);
-color: var(--texto-footer);
-
-}
 
 .imagen1{
  height: 40%;
@@ -39,6 +34,10 @@ footer{
   flex-direction: row;
   height: 150px;
   justify-content: right;
+  background-color: var(--fondo-Footer);
+  color: var(--texto-footer);
+  font-family: 'Roboto';
+  
 }
 .imagenesFooter{
   display: flex;

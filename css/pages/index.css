@@ -1,3 +1,4 @@
+
 *{--magenta: #ee3d8f;
 --celeste: #37bbed;
 --morado: #9283be;
@@ -72,6 +73,7 @@ header li a{
     width: 90px;
     height: 30px;
     cursor: pointer;
+    border: none;
 }
 .nav-paso:hover {
     background-color: var(--gris-claro);
@@ -89,6 +91,7 @@ header li a{
     width: 90px;
     height: 30px;
     cursor: pointer;
+    border: none;
   }
 
   .nav-informes {
@@ -137,10 +140,10 @@ padding-left: 5%;
     width: 400px;
     height: 100px;
     padding: 1rem;
-    font-family: Arial, sans-serif;
     font-size: 28px;
     color: #FFF;
     cursor: pointer;
+    border: none;
   
     
 }
@@ -164,11 +167,10 @@ padding-left: 5%;
   height: 100px;
   width: 400px;
   padding: 1rem;
-  font-family: Arial, sans-serif;
   font-size: 28px;
   color: #FFF;
   cursor: pointer;
-  
+  border: none;
   }
   
 .generalesBoton:hover {
