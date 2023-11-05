@@ -8,6 +8,7 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/pages/generales.css" />
+    <script src="js/pages/general.js"></script>
     <link rel="shortcut icon" href="img/icons/favicon-16x16.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/37c9cbbea6.js" crossorigin="anonymous"></script>
 
@@ -24,27 +25,30 @@
         <nav class="menu">
             <ul class="nav-items">
 
-                <select class="año">
-                    <option value="opcion1">Año</option>
-                    <option value="opcion2">2022</option>
-                    <option value="opcion3">2021</option>
+                <select class="año" id="periodoSelect" >
+                    <option value="" disabled selected hidden>Año</option>
+                    <option value= "0" >2021</option>
+                    <option value="1">2019</option>
+                    <option value="2">2017</option>
                 </select>
 
-                <select class="cargo">
-                    <option value="opcion1">Cargo</option>
-                    <option value="opcion2">Senador</option>
-                    <option value="opcion3">Diputado</option>
+                <select class="cargo" id="cargoSelect">
+                    <option value="" disabled selected hidden>Cargo</option>
+                    <option value="0">Cargo</option>
+                    <option value="1">Senador</option>
+                    <option value="2">Diputado</option>
                 </select>
 
-                <select class="distrito">
-                    <option value="opcion1">Distrito</option>
-                    <option value="opcion2">Sur</option>
-                    <option value="opcion3">Norte</option>
+                <select class="distrito" id="distritoSelect">
+                    <option value="" disabled selected hidden>Distrito</option>
+                    <option value="0">Oeste</option>
+                    <option value="1">Sur</option>
+                    <option value="2">Norte</option>
                 </select>
 
 
 
-                <button class="filtrar">
+                <button class="filtrar" id="filtrarButton">
                     <i class="fa fa-search"></i> Filtrar
                 </button>
                 <li><a class="active" href="paso.html"><button class="nav-paso">Paso</button></a></li>
