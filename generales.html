@@ -8,7 +8,7 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/pages/generales.css" />
-    <script src="js/pages/general.js"></script>
+    
     <link rel="shortcut icon" href="img/icons/favicon-16x16.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/37c9cbbea6.js" crossorigin="anonymous"></script>
 
@@ -24,26 +24,20 @@
         <!--Barra de menú principal-->
         <nav class="menu">
             <ul class="nav-items">
+                
 
-                <select class="año" id="periodoSelect" >
-                    <option value="" disabled selected hidden>Año</option>
-                    <option value= "0" >2021</option>
-                    <option value="1">2019</option>
-                    <option value="2">2017</option>
+                <select class="año" onchange="seleccionarAnio()" id="periodoSelect" name="periodoSelect">
+                    <option  disabled selected hidden>Año</option>
+                   
                 </select>
 
-                <select class="cargo" id="cargoSelect">
-                    <option value="" disabled selected hidden>Cargo</option>
-                    <option value="0">Cargo</option>
-                    <option value="1">Senador</option>
-                    <option value="2">Diputado</option>
+                <select class="cargo"onchange="seleccionarDistrito()" id="cargoSelect">
+                    <option  disabled selected hidden>Cargo</option>
+                  
                 </select>
 
                 <select class="distrito" id="distritoSelect">
-                    <option value="" disabled selected hidden>Distrito</option>
-                    <option value="0">Oeste</option>
-                    <option value="1">Sur</option>
-                    <option value="2">Norte</option>
+                    <option  disabled selected hidden>Distrito</option>
                 </select>
 
 
@@ -360,6 +354,8 @@
         </div>
 
     </footer>
+
+    <script src="js/pages/general.js"></script>
 </body>
 
 </html>
