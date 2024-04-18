@@ -114,6 +114,19 @@ header li a {
     cursor: pointer;
 }
 
+.select-general{
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    color: var(--celeste);
+    font-weight: bold;
+    outline: none;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
 .inicio {
     background-color:#333;
     border-radius: 8px;

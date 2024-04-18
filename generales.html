@@ -36,13 +36,17 @@
                   
                 </select>
 
-                <select class="distrito" id="distritoSelect">
+                <select class="distrito" id="distritoSelect" onchange="seleccionarSeccion()">
                     <option  disabled selected hidden>Distrito</option>
                 </select>
 
+                <select name="select-seccion" id="select-seccion" class="select-general">
+                <option selected>Seccion</option>
+            </select>
 
 
-                <button class="filtrar" id="filtrarButton" onclick="consultarResultados()">
+
+                <button class="filtrar" id="filtrarButton" onclick="filtrarInformacion()">
                     <i class="fa fa-search"></i> Filtrar
                 </button>
                 <li><a class="active" href="paso.html"><button class="nav-paso">Paso</button></a></li>
@@ -60,8 +64,17 @@
     <!-- Contenido principal de la página -->
     <main>
 
-        <section class="mensajesUsuario">
 
+        <section id="messages">
+            <ul class="mensajes">
+                <li class="hidden" id="color-mensaje">
+                    <p><i id="texto-mensaje" class=""></i></p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mensajesUsuario">
+<!--
             <p class="mensajesUsuario-verde"> <i class="fa-solid fa-thumbs-up fa-xl" style="margin-right: 2%;"></i> Se
                 agrego con éxito el resultado al informe</p>
             <p class="mensajesUsuario-rojo"><i class="fa-solid fa-triangle-exclamation fa-xl"
@@ -70,7 +83,7 @@
             <p class="mensajesUsuario-amarillo"><i class="fa-solid fa-exclamation fa-2xl"
                     style="margin-right: 2%;"></i>La operación no se pudo completar</p>
 
-
+            -->
         </section>
 
 
