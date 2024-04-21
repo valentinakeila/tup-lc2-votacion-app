@@ -143,7 +143,80 @@ function filtrarInformacion() {
         return;
     }
 
-   
+    let main = document.getElementById('sec-contenido');
+    main.style.display = "block";
+    let main2 = document.getElementById('blank');
+    main2.style.display = "block";
+    let main3 = document.getElementById('subtitulo');
+    if (main3) {
+        main3.style.display = "block";
+    } else {
+        console.error("El elemento 'subtitulo' no se encontró en el DOM.");
+    }
+    
+    // Recuperar valores de los filtros
+    let anioEleccion = periodosSelect.value;
+    let categoriaId = idCargo.value;
+    let idDistrito = idDistritoOption.value;
+    let seccionProvincialId = selectSeccion.value;
+    let seccionId = selectSeccion.value;
+    let selectedSeccion = selectSeccion.options[selectSeccion.selectedIndex];
+    if (selectedDistrito.options[selectedDistrito.selectedIndex].text == "ARGENTINA") {
+        seccionTexto = "";
+    }
+    else {
+        seccionTexto = selectedSeccion.textContent
+    }
+    let tipoEleccionGlobal = tipoEleccion; // Asegúrate de que esta variable está definida correctamente en tu script
+    let circuitoIdGlobal = circuitoId; // Asegúrate de que esta variable está definida correctamente en tu script
+    let mesaIdGlobal = mesaId;
+
+    crearTitulo(seccionTexto);
+
+
+    // Construir la URL con los parámetros
+    let url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccionGlobal}&categoriaId=${categoriaId}&distritoId=${idDistrito}&seccionId=${seccionId}&circuitoId=${circuitoIdGlobal}&mesaId=${mesaIdGlobal}`;
+    console.log(url);
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            datosJSON2 = data;
+            console.log(datosJSON2);
+            cargarDatos();
+            mostrarMensaje("verde-cargado");
+            //agregamos al dom los nombres de los partidos politicos
+            const barras = document.getElementById("grid");
+            const divAgrupaciones = document.createElement("div")
+            document.getElementById("estadisticas_partidos").appendChild(divAgrupaciones)
+            let indice = 0;
+            
+            data.valoresTotalizadosPositivos.forEach(partido => {
+                console.log(partido)
+                console.log(partido.nombreAgrupacion)
+                let divPartido = document.createElement("div")
+                divPartido.classList.add("partido")
+                divPartido.innerHTML = 
+                                       `<h4 class="partido_nombre">${partido.nombreAgrupacion}</h4>
+                                        <h4 class="partido_porcentaje">${partido.votosPorcentaje}%</h4>
+                                        <h4 class="partido_votos">${partido.votos}  VOTOS</h4>
+                                        <label class="barra_porcentaje barras" style="width:20%;background: ${colores[indice % colores.length].color};"></label>
+                                        <label class="barra_fondo barras" style="background: ${colores[indice % colores.length].colorClaro}"></label>`
+
+                divAgrupaciones.appendChild(divPartido)
+                const bar = `<div class="bar" style="--bar-value:${partido.votosPorcentaje}%;" data-name="${partido.nombreAgrupacion}" title="${partido.nombreAgrupacion} ${partido.votosPorcentaje}%"></div>`;
+                barras.innerHTML += bar;
+                indice++;
+            })
+        })
+        .catch(error => {
+            mostrarMensaje("amarillo-no-cargado");
+        });
+    
 
     
 }
@@ -204,6 +277,33 @@ async function mostrarMensaje(color) {
 }
 
 
+function crearTitulo(seccionTexto = "") {
 
+    const titulo = document.getElementById('sec-titulo');
+    let selectedDistrito = document.getElementById("distritoSelect")
+    console.log("Valor de cargoTexto:", cargoTexto);
+
+    // Verificar el valor de distritoTexto
+    console.log("Valor de distritoTexto:", distritoTexto);
+
+    // Verificar el valor de seccionTexto
+    console.log("Valor de seccionTexto:", seccionTexto);
+
+
+    if (selectedDistrito.options[selectedDistrito.selectedIndex].text != "ARGENTINA") {
+        titulo.innerHTML = `
+        <div class="" id="sec-titulo">-
+            <h2>Elecciones ${periodosSelect.value} | Generales</h2>
+            <p class="texto-path">${periodosSelect.value} > Generales > Provisorio > ${cargoTexto} > ${distritoTexto} > ${seccionTexto}</p>
+        </div>`
+    }
+    else {
+        titulo.innerHTML = `
+        <div class="" id="sec-titulo">-
+            <h2>Elecciones ${periodosSelect.value} | Generales</h2>
+            <p class="texto-path">${periodosSelect.value} > Generales > Provisorio > ${cargoTexto}</p>
+        </div>`
+    }
+}
 
 
