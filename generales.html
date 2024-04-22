@@ -137,7 +137,7 @@
                                                 M382.635,358.347c23.575,0,43.614,24.754,47.15,57.76h-94.302C339.02,383.101,359.059,358.347,382.635,358.347z">
                         </path>
                     </g>
-                </svg><p>Mesa escrutada <br> 62.71%</p>
+                </svg><p id="mesas">Mesa escrutada <br></p>
 
             </div>
 
@@ -168,7 +168,7 @@
                     <path fill="#FFFFFF"
                         d="M180.521,255.171c5.19,10.382,23.594,41.525,56.743,41.525c33.15,0,51.554-31.144,56.744-41.525c7.55-3.822,12.906-10.921,14.511-19.229c4.03-10.152,3.024-21.612-2.714-30.908c-1.321-1.697-2.869-3.205-4.601-4.482c-9.042-35.281-44.972-56.552-80.253-47.51c-23.321,5.977-41.532,24.188-47.509,47.51c-1.962,1.255-3.68,2.854-5.073,4.719c-5.66,9.234-6.664,20.588-2.713,30.672C167.249,244.36,172.775,251.508,180.521,255.171z M180.521,214.235c1.003-1.31,2.491-2.16,4.129-2.359l0,0c0.77,0.139,1.506-0.372,1.645-1.142c0.003-0.013,0.005-0.025,0.007-0.038c3.3-27.756,28.475-47.581,56.23-44.281c23.217,2.76,41.521,21.064,44.28,44.281c0.178,0.805,0.959,1.325,1.77,1.18c1.693,0.124,3.247,0.987,4.247,2.359c1.651,2.241,3.067,7.078,0,17.342c-1.415,4.954-4.247,10.735-8.848,9.438c-0.716-0.241-1.494,0.122-1.77,0.825c-7.668,19.584-24.892,39.284-45.772,39.284s-38.223-19.818-45.891-39.52c-0.238-0.571-0.797-0.944-1.416-0.944l0,0c-4.601,1.534-7.55-4.364-8.966-9.319c-2.595-10.027-1.18-14.864,0.473-17.105H180.521z">
                     </path>
-                </svg><p> Electores <br> 62.71%</p>
+                </svg><p id="electores"> Electores <br></p>
             </div>
 
 
@@ -227,35 +227,38 @@
                                         C184.178,409.323,186.501,406.999,189.368,406.999z"></path>
                     <rect x="195.975" y="387.534" fill="#FFFFFF" width="69.013" height="14.393"></rect>
                 </svg>
-                <p>Participación Sobre Escrutado <br> 62.71%</p>
+                <p id="participacion">Participación Sobre Escrutado <br></p>
+            </div>
+
+
             </div>
 
         </section>
 
+
+        
+
         <section id="recuadros">
-
-
-           <div class="cuadros">
-                    <div id="cuadros_estadisticas">
-                        <h3 class="cuadros-texto">Agrupaciones politicas</h3>
-                        <div id="estadisticas_partidos">
-                        </div>
-                    </div>
-                    <div id="cuadros_mapas"><!--//Ciudad Autónoma de Buenos Aires//-->
-                        <h2>Mapa Provincial</h2>
-                        <h2 id="nombreMapa"></h2>
-                        <div id="mapa"></div>
-                    </div>
-                    <div class="cuadro chart-wrap horizontal">
-                        <div>
-                            <h2>Resumen de Votos</h2>
-                        </div>
-                        <div id="grid" class="grid">
-    
-                        </div>
+            
+            <div class="cuadros">
+                <div id="cuadros_estadisticas">
+                    <h3 class="cuadros-texto">Agrupaciones politicas</h3>
+                    <div id="estadisticas_partidos">
                     </div>
                 </div>
+                <div id="cuadros_mapas"><!--//Ciudad Autónoma de Buenos Aires//-->
+                    <h3 class = "cuadros-texto">Mapa Provincial</h2>
+                    <h2 id="nombreMapa"></h2>
+                    <div id="mapa"></div>
+                </div>
+                <div class="cuadro chart-wrap horizontal">
+                    <div>
+                        <h3 class="cuadros-texto">Resumen de Votos</h2>
+                    </div>
+                    <div id="grid" class="grid">
 
+                    </div>
+                </div>
 
 
 
@@ -267,7 +270,7 @@
     </main>
 
     <section id="blank">
-        <div style="height: 600px;"></div>
+        <div style="height: 500px;"></div>
     </section>
     <!--Pie de página-->
     <footer>
@@ -290,6 +293,7 @@
     </footer>
 
     <script src="js/pages/general.js"></script>
+    <script src="js/common.js"></script>
 </body>
 
 </html>

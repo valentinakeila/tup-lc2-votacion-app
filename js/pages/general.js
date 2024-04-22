@@ -83,6 +83,8 @@ function seleccionarDistrito() {
             });
         }
     })
+
+    
 } 
 
 
@@ -119,6 +121,7 @@ function seleccionarSeccion() {
     }
     else {
         document.getElementById("select-seccion").style.display = "none"; // si se quieren buscar los resultados presidenciales a nivel nacional, esconde el selector de sección ya que es innecesario y su unica opción es "null"
+        
 
         console.log(selectedDistrito.options[selectedDistrito.selectedIndex].text) // debería solo logear "ARGENTINA" por razones de debugeo, borrar más adelante
     }
@@ -128,6 +131,11 @@ function seleccionarSeccion() {
 
 function filtrarInformacion() {
     const partidos = document.querySelectorAll('.partido');
+    let secContenido = document.getElementById('sec-contenido');
+    secContenido.style.display = 'flex'; // o 'flex' si prefieres
+
+    let recuadros = document.getElementById('recuadros');
+    recuadros.style.display = 'flex'; // o 'flex' si prefieres
 
     partidos.forEach(box => {
         box.remove();
@@ -137,22 +145,12 @@ function filtrarInformacion() {
     if (periodosSelect.value === "Año" ||
         idCargo.value === "Cargo" ||
         idDistritoOption.value === "Distrito" ||
-        selectSeccion.value === "Seccion" &&
-        selectedDistrito.options[selectedDistrito.selectedIndex].text != "ARGENTINA") {
+        selectSeccion.value === "Seccion" && selectedDistrito.options[selectedDistrito.selectedIndex].text != "ARGENTINA") {
         mostrarMensaje("rojo-vacio");
         return;
     }
 
-    let main = document.getElementById('sec-contenido');
-    main.style.display = "block";
-    let main2 = document.getElementById('blank');
-    main2.style.display = "block";
-    let main3 = document.getElementById('subtitulo');
-    if (main3) {
-        main3.style.display = "block";
-    } else {
-        console.error("El elemento 'subtitulo' no se encontró en el DOM.");
-    }
+    
     
     // Recuperar valores de los filtros
     let anioEleccion = periodosSelect.value;
@@ -211,6 +209,9 @@ function filtrarInformacion() {
                 const bar = `<div class="bar" style="--bar-value:${partido.votosPorcentaje}%;" data-name="${partido.nombreAgrupacion}" title="${partido.nombreAgrupacion} ${partido.votosPorcentaje}%"></div>`;
                 barras.innerHTML += bar;
                 indice++;
+
+                let secBlank = document.getElementById('blank');
+                secBlank.style.display = 'none';
             })
         })
         .catch(error => {
@@ -277,7 +278,7 @@ async function mostrarMensaje(color) {
 }
 
 
-function crearTitulo(seccionTexto = "") {
+function crearTitulo(distritoTexto = "", seccionTexto = "") {
 
     const titulo = document.getElementById('sec-titulo');
     let selectedDistrito = document.getElementById("distritoSelect")
@@ -307,3 +308,25 @@ function crearTitulo(seccionTexto = "") {
 }
 
 
+function cargarDatos() {
+    const mesasEscrutadas = document.getElementById("mesas");
+    const electores = document.getElementById("electores");
+    const participacionEscrutado = document.getElementById("participacion");
+    const mapa = document.getElementById("mapa");
+    const nombreMapa = document.getElementById("nombreMapa");
+
+    let contentMesa = datosJSON2.estadoRecuento.mesasTotalizadas;
+    let contentElectores = datosJSON2.estadoRecuento.cantidadElectores;
+    let contentParticipacion = datosJSON2.estadoRecuento.participacionPorcentaje;
+
+    mesasEscrutadas.textContent = `Mesas Escrutadas ${contentMesa}`;
+    electores.textContent = `Electores ${contentElectores}`;
+    participacionEscrutado.textContent = `Participacion sobre escrutado ${contentParticipacion}%`;
+
+    nombreMapa.textContent = `${distritoTexto}`;
+    mapa.innerHTML = provincias[idDistrito];
+
+     // Cambiar el estilo de los elementos a flex en fila
+     let secContenido = document.getElementById('sec-contenido');
+    secContenido.style.display = 'flex';
+}
