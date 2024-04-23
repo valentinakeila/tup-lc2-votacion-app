@@ -130,6 +130,7 @@ function seleccionarSeccion() {
 
 
 function filtrarInformacion() {
+    
     const partidos = document.querySelectorAll('.partido');
     let secContenido = document.getElementById('sec-contenido');
     secContenido.style.display = 'flex'; // o 'flex' si prefieres
@@ -146,7 +147,12 @@ function filtrarInformacion() {
         idCargo.value === "Cargo" ||
         idDistritoOption.value === "Distrito" ||
         selectSeccion.value === "Seccion" && selectedDistrito.options[selectedDistrito.selectedIndex].text != "ARGENTINA") {
-        mostrarMensaje("rojo-vacio");
+            let sec = document.getElementById('sec-contenido');
+            sec.style.display = 'none';
+            let secRecruadros = document.getElementById('recuadros');
+            secRecruadros.style.display = 'none';
+           
+            mostrarMensaje("rojo-vacio");
         return;
     }
 
@@ -159,6 +165,7 @@ function filtrarInformacion() {
     let seccionProvincialId = selectSeccion.value;
     let seccionId = selectSeccion.value;
     let selectedSeccion = selectSeccion.options[selectSeccion.selectedIndex];
+   
     if (selectedDistrito.options[selectedDistrito.selectedIndex].text == "ARGENTINA") {
         seccionTexto = "";
     }
@@ -329,4 +336,61 @@ function cargarDatos() {
      // Cambiar el estilo de los elementos a flex en fila
      let secContenido = document.getElementById('sec-contenido');
     secContenido.style.display = 'flex';
+}
+
+function agregarInforme() {
+    try {
+        if (Object.keys(datosJSON2).length !== 0) {
+
+            var dataInforme = {
+                año: periodosSelect.value,
+                tipo: 'Generales',
+                recuento: 'Provisorio',
+                cargo: cargoTexto,
+                distrito: distritoTexto,
+                seccion: seccionTexto,
+                distritoId: parseInt(idDistritoOption.value),
+                informe: datosJSON2
+            };
+        } else {
+            console.error('infoJSON está vacío. No se guardará en localStorage.');
+
+            mostrarMensaje("rojo-informe");
+        }
+
+        var storageActual = localStorage.getItem('dataInforme');
+
+        if (storageActual) {
+
+            var existente = JSON.parse(storageActual);
+            var existe = false;
+
+            for (var i = 0; i < existente.length; i++) {
+                if (JSON.stringify(existente[i]) === JSON.stringify(dataInforme)) {
+                    existe = true;
+                    break;
+                }
+            }
+
+            if (!existe) {
+                existente.push(dataInforme);
+
+                // Guardar el objeto actualizado en el localStorage
+                localStorage.setItem('dataInforme', JSON.stringify(existente));
+                console.log('JSON agregado correctamente.');
+                mostrarMensaje("verde-informe");
+            } else {
+
+                mostrarMensaje("amarillo-informe");
+                console.log('El JSON ya existe, no se puede agregar.');
+            }
+        } else {
+            localStorage.setItem('dataInforme', JSON.stringify([dataInforme]));
+            console.log('Primer JSON guardado correctamente.');
+            mostrarMensaje("verde-informe");
+        }
+    } catch (error) {
+        console.error('Se produjo un error:', error);
+        mensajito = 'rojo';
+    }
 }

@@ -114,6 +114,24 @@ footer{
 #cuadros_estadisticas{
   overflow-y: scroll;
   overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+#cuadros_estadisticas::-webkit-scrollbar {
+  /* Estilos específicos para la barra de desplazamiento en navegadores WebKit */
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+#cuadros_estadisticas::-webkit-scrollbar-track {
+  /* Estilos para la pista de la barra de desplazamiento */
+  background: rgb(227, 226, 226); /* Color de fondo */
+  border-radius: 40px; /* Radio de borde */
+}
+
+#cuadros_estadisticas::-webkit-scrollbar-thumb {
+  background-color: #bdbaba;
+  border-radius: 40px;
+  
 }
 
 
@@ -123,6 +141,7 @@ footer{
   grid-template-columns: 25% 25% 20% 30%;
   grid-template-rows: 35% 35% 30%;
   padding: 2px;
+  margin-left: 20px;
 }
 .partido_nombre{
   grid-column: 1/4;

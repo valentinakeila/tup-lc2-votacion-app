@@ -337,23 +337,6 @@ header li a {
 }
 
 
-.primerTituloCuadro {
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-left: 1px var(--borde-Grilla) solid;
-    border-right: 1px var(--borde-Grilla) solid;
-    border-top: 1px var(--borde-Grilla) solid;
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-    margin-right: 1%;
-    width: 30%;
-    height: 50px;
-    font-family: sans-serif;
-    
-
-}
-
 
 
 
@@ -399,8 +382,9 @@ header li a {
     margin-left: 10px;
     position: relative;
     padding: 5px 0 5px 0;
-    height: 50%;
-    width: 100%;
+    margin-top: 200px;
+    height: 25%;
+    width: 50%;
     border-left: 2px solid var(--grid-color);
     font-size: 10px;
 }
@@ -480,6 +464,7 @@ header li a {
 
 .cuadro-texto{
     margin: 0 20px;
+   position: fixed-texto;
 }
 
 
@@ -518,7 +503,11 @@ header li a {
 }
 
 
+
 #sec-contenido,
 #recuadros {
   display: none;
 }
+
+
+
