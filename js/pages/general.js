@@ -130,6 +130,7 @@ function seleccionarSeccion() {
 
 
 function filtrarInformacion() {
+
     
     const partidos = document.querySelectorAll('.partido');
     let secContenido = document.getElementById('sec-contenido');
@@ -137,6 +138,7 @@ function filtrarInformacion() {
 
     let recuadros = document.getElementById('recuadros');
     recuadros.style.display = 'flex'; // o 'flex' si prefieres
+    
 
     partidos.forEach(box => {
         box.remove();
@@ -151,13 +153,15 @@ function filtrarInformacion() {
             sec.style.display = 'none';
             let secRecruadros = document.getElementById('recuadros');
             secRecruadros.style.display = 'none';
-           
             mostrarMensaje("rojo-vacio");
         return;
     }
 
     
-    
+    let sin_datos = document.getElementById('sin_datos');
+    sin_datos.style.display = "none";
+
+
     // Recuperar valores de los filtros
     let anioEleccion = periodosSelect.value;
     let categoriaId = idCargo.value;

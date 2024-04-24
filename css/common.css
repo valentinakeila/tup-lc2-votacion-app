@@ -226,10 +226,15 @@ footer{
 }
 
 #sin_datos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
   text-align: center;
+  background-color: var(--grafica-amarillo);
 }
 
 #sin_datos img {
@@ -237,12 +242,7 @@ footer{
   height: 60%;
 }
 
-#sin_datos h1 {
-  background-color: rgb(252, 210, 0);
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 10px;
-}
+
 
 
 /*barra de progreso*/
