@@ -35,17 +35,14 @@
     <!-- Contenido principal de la página -->
     <main>
 
-        <section class="mensajesUsuario">
 
-            <p class="mensajesUsuario-verde"> <i class="fa-solid fa-thumbs-up fa-xl" style="margin-right: 2%;"></i> Se
-                agrego con éxito el resultado al informe</p>
-            <p class="mensajesUsuario-rojo"><i class="fa-solid fa-triangle-exclamation fa-xl"
-                    style="margin-right: 2%;"></i>Error: se produjo un error al intentar agregar resultados al informe
-            </p>
-            <p class="mensajesUsuario-amarillo"><i class="fa-solid fa-exclamation fa-2xl"
-                    style="margin-right: 2%;"></i>La operación no se pudo completar</p>
-
-
+        
+        <section id="messages" class="mensajesUsuario">
+            <ul class="mensajes">
+                <li class="hidden" id="color-mensaje">
+                    <p><i id="texto-mensaje" class=""></i></p>
+                </li>
+            </ul>
         </section>
 
 
@@ -91,6 +88,9 @@
         </div>
 
     </footer>
+
+<script src="js/pages/informes.js"></script>    
+<script src="js/common.js"></script>
 </body>
 
 </html>

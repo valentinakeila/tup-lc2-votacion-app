@@ -27,7 +27,7 @@ function cargarDatosInformes(){
     jsonStorage.forEach(element => {
         cuadroInformes.innerHTML += `
         <tbody>
-            <th>
+            <th class= "grilla-provincia">
                 ${element.distrito}
                 <br>
                 ${provincias[element.distritoId]}

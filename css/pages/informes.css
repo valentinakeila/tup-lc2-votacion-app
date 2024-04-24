@@ -257,6 +257,7 @@
   .grilla-provincia{
     width: fit-content;
     flex: 3;
+    vertical-align: top;
     
   }
 
@@ -284,11 +285,23 @@
   .textos{
     padding-left: 3%;
     width: 15%;
+    vertical-align: top;
+    text-align: left;
+
   }
 
   .grilla-eleccion{
   width: fit-content;
   }
+
+  .datos-div{
+    display: flex;
+    gap: 10px;
+    padding: 15px 0;
+    font-size: 12px;
+    vertical-align: top;
+    text-align: center;
+}
 
   .cuadrados{
     margin-top: 10px;
