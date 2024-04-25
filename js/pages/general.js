@@ -20,6 +20,7 @@ const url = "https://resultados.mininterior.gob.ar/api/menu";
 const urlPeriodos = "https://resultados.mininterior.gob.ar/api/menu/periodos";
 const urlCargos = "https://resultados.mininterior.gob.ar/api/menu?año=";
 
+localStorage.clear()
 fetch(urlPeriodos)
   .then((response) => response.json())
   .then((data) => {
@@ -333,13 +334,16 @@ function cargarDatos() {
     mesasEscrutadas.textContent = `Mesas Escrutadas ${contentMesa}`;
     electores.textContent = `Electores ${contentElectores}`;
     participacionEscrutado.textContent = `Participacion sobre escrutado ${contentParticipacion}%`;
+    
+    //esto da error pq arg no tiene mapa y como no lo encuentra no se ejecuta el resto
 
     nombreMapa.textContent = `${distritoTexto}`;
     mapa.innerHTML = provincias[idDistrito];
 
      // Cambiar el estilo de los elementos a flex en fila
-     let secContenido = document.getElementById('sec-contenido');
+    let secContenido = document.getElementById('sec-contenido');
     secContenido.style.display = 'flex';
+    
 }
 
 function agregarInforme() {
