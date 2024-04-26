@@ -334,16 +334,16 @@ function cargarDatos() {
     mesasEscrutadas.textContent = `Mesas Escrutadas ${contentMesa}`;
     electores.textContent = `Electores ${contentElectores}`;
     participacionEscrutado.textContent = `Participacion sobre escrutado ${contentParticipacion}%`;
-    
+   
     //esto da error pq arg no tiene mapa y como no lo encuentra no se ejecuta el resto
 
-    nombreMapa.textContent = `${distritoTexto}`;
-    mapa.innerHTML = provincias[idDistrito];
+    if (typeof distritoTexto !== "undefined" && distritoTexto !== null) {
+        nombreMapa.textContent = `${distritoTexto}`;
+        mapa.innerHTML = provincias[idDistrito];
+    }
 
-     // Cambiar el estilo de los elementos a flex en fila
-    let secContenido = document.getElementById('sec-contenido');
-    secContenido.style.display = 'flex';
-    
+
+     
 }
 
 function agregarInforme() {
@@ -355,7 +355,7 @@ function agregarInforme() {
                 tipo: 'Generales',
                 recuento: 'Provisorio',
                 cargo: cargoTexto,
-                distrito: distritoTexto,
+                distrito: (idDistritoOption.value === "0") ? "ARGENTINA" : distritoTexto, // Verificar si el distrito es "ARGENTINA"
                 seccion: seccionTexto,
                 distritoId: parseInt(idDistritoOption.value),
                 informe: datosJSON2
