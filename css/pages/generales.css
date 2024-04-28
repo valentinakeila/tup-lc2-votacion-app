@@ -204,41 +204,6 @@ header li a {
     padding-left: 5%;
 }
 
-.mensajesUsuario-verde {
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 10px;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 200;
-    text-align: center;
-    background-color: var(--grafica-verde);
-}
-
-.mensajesUsuario-amarillo {
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 10px;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 200;
-    text-align: center;
-    background-color: var(--grafica-amarillo);
-}
-
-.mensajesUsuario-rojo {
-    width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 10px;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 200;
-    text-align: center;
-    background-color: var(--grafica-bordo);
-}
 
 .texto-path {
     font-size: 14px;

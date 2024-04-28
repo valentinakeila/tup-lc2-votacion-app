@@ -279,12 +279,27 @@ async function mostrarMensaje(color) {
 
     if (mensajes[color]) {
         colorMensaje.className = 'mensajesUsuario-' + mensajes[color].clase; // Asigna la clase de estilo
-        textoMensaje.innerText = mensajes[color].texto; // Asigna el texto del mensaje
-        textoMensaje.className = mensajes[color].icono; // Asigna la clase del icono
+
+        // Limpiamos el contenido del textoMensaje
+        textoMensaje.innerHTML = '';
+
+        // Creamos un elemento <span> para contener el texto
+        const textoSpan = document.createElement('span');
+        textoSpan.innerText = mensajes[color].texto;
+
+        // Creamos un elemento <i> para el icono
+        const iconoElemento = document.createElement('i');
+        iconoElemento.className = mensajes[color].icono; // Asigna la clase del icono
+        iconoElemento.style.marginRight = '2%'; // Aplica el margen derecho
+
+        // Insertamos el icono y el texto dentro del textoMensaje
+        textoMensaje.appendChild(iconoElemento);
+        textoMensaje.appendChild(textoSpan);
+
         // Oculta el mensaje después de un tiempo
         setTimeout(function () {
             colorMensaje.className = 'hidden';
-            textoMensaje.className = ''; // Remueve la clase del icono
+            textoMensaje.innerHTML = ''; // Remueve el contenido del mensaje
         }, 4000);
     }
 }

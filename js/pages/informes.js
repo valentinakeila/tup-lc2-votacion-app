@@ -112,13 +112,28 @@ async function mostrarMensaje(color) {
 
   // Verifica si el color proporcionado tiene un mensaje y una clase asociados
   if (mensajes[color]) {
-    colorMensaje.className = mensajes[color].clase; // Asigna la clase de estilo
-    textoMensaje.innerText = mensajes[color].texto; // Asigna el texto del mensaje
-    textoMensaje.className = mensajes[color].icono; // Asigna la clase del icono
+    colorMensaje.className = 'mensajesUsuario-' + mensajes[color].clase; // Asigna la clase de estilo
+
+    // Limpiamos el contenido del textoMensaje
+    textoMensaje.innerHTML = '';
+
+    // Creamos un elemento <span> para contener el texto
+    const textoSpan = document.createElement('span');
+    textoSpan.innerText = mensajes[color].texto;
+
+    // Creamos un elemento <i> para el icono
+    const iconoElemento = document.createElement('i');
+    iconoElemento.className = mensajes[color].icono; // Asigna la clase del icono
+    iconoElemento.style.marginRight = '2%'; // Aplica el margen derecho
+
+    // Insertamos el icono y el texto dentro del textoMensaje
+    textoMensaje.appendChild(iconoElemento);
+    textoMensaje.appendChild(textoSpan);
+
     // Oculta el mensaje después de un tiempo
     setTimeout(function () {
-      colorMensaje.className = "hidden";
-      textoMensaje.className = ""; // Remueve la clase del icono
+        colorMensaje.className = 'hidden';
+        textoMensaje.innerHTML = ''; // Remueve el contenido del mensaje
     }, 4000);
-  }
+}
 }

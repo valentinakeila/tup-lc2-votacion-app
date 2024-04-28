@@ -359,3 +359,49 @@ footer{
   display: inline-block;
   white-space: nowrap;
 }
+
+
+
+.mensajesUsuario-verde {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--grafica-verde);
+}
+
+.mensajesUsuario-amarillo {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--grafica-amarillo);
+}
+
+.mensajesUsuario-rojo {
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+  background-color: var(--grafica-bordo);
+}
+
+#texto-mensaje{
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 200;
+  font-family: 'Roboto';
+}
