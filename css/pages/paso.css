@@ -150,6 +150,18 @@ header li a {
 }
 
 
+.select-general{
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    color: var(--celeste);
+    font-weight: bold;
+    outline: none;
+    margin-right: 20px;
+    cursor: pointer;
+}
 
 
 
@@ -239,7 +251,8 @@ header li a {
 
 .mesa-escrutada {
     display: flex;
-    flex-direction: flow;
+    flex-direction: row;
+    font-weight: bold;
     background-color: var(--celeste);
     border-radius: 10px;
     margin: 15px;
@@ -249,6 +262,7 @@ header li a {
     color: #FFF;
     font-size: 12px;
     flex-direction: row;
+
 }
 
 
