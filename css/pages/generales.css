@@ -302,9 +302,6 @@ header li a {
 }
 
 
-
-
-
 .sec-titulo {
     margin-left: 14%;
     margin-top: 5%;
@@ -463,9 +460,7 @@ header li a {
 #cuadros_mapas > svg{
     padding-top: 100px;
 }
-.placeholder_estadisticaHor{
-    overflow: hidden scroll;
-}
+
 
 
 

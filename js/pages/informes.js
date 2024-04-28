@@ -1,7 +1,7 @@
-var jsonStorage;
+let jsonStorage;
 
 document.addEventListener("DOMContentLoaded", function () {
-  var actualStorage = localStorage.getItem("dataInforme");
+  let actualStorage = localStorage.getItem("dataInforme");
 
   if (!actualStorage) {
     mostrarMensaje("amarillo-no-informes");
@@ -64,7 +64,7 @@ function cargarDatosInformes() {
         </tbody>
         `;
     element.informe.valoresTotalizadosPositivos.forEach((agrupacion) => {
-      var datosAgrupacion = document.getElementById(
+      let datosAgrupacion = document.getElementById(
         `datos-agrupacion-${count}`
       );
       datosAgrupacion.innerHTML += `

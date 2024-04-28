@@ -211,11 +211,13 @@ function filtrarInformacion() {
                 let divPartido = document.createElement("div")
                 divPartido.classList.add("partido")
                 divPartido.innerHTML = 
-                                       `<h4 class="partido_nombre">${partido.nombreAgrupacion}</h4>
-                                        <h4 class="partido_porcentaje">${partido.votosPorcentaje}%</h4>
-                                        <h4 class="partido_votos">${partido.votos}  VOTOS</h4>
-                                        <label class="barra_porcentaje barras" style="width:20%;background: ${colores[indice % colores.length].color};"></label>
-                                        <label class="barra_fondo barras" style="background: ${colores[indice % colores.length].colorClaro}"></label>`
+                `<h4 class="partido_nombre">${partido.nombreAgrupacion}</h4>
+                <h4 class="partido_porcentaje">${partido.votosPorcentaje}%</h4>
+                <h4 class="partido_votos">${partido.votos}  VOTOS</h4>
+                <label class="barra_porcentaje barras" style="width: ${partido.votosPorcentaje}%; background: ${colores[indice % colores.length].color};"></label>
+                <label class="barra_fondo barras" style="background: ${colores[indice % colores.length].colorClaro}"></label>`
+
+
 
                 divAgrupaciones.appendChild(divPartido)
                 const bar = `<div class="bar" style="--bar-value:${partido.votosPorcentaje}%;" data-name="${partido.nombreAgrupacion}" title="${partido.nombreAgrupacion} ${partido.votosPorcentaje}%"></div>`;

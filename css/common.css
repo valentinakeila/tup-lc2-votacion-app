@@ -112,27 +112,22 @@ footer{
 }
 
 #cuadros_estadisticas{
-  overflow-y: scroll;
+  overflow-y:hidden;
   overflow-x: hidden;
+ 
+}
+
+
+
+
+#estadisticas_partidos {
+  max-height: 450px; /* Altura máxima del contenedor de partidos políticos */
+  overflow-y: auto; /* Habilitar el scroll vertical cuando sea necesario */
+  position: sticky; /* Fijar el contenedor */
+  top: 0; /* Fijar en la parte superior */
   scrollbar-width: thin;
 }
 
-#cuadros_estadisticas::-webkit-scrollbar {
-  /* Estilos específicos para la barra de desplazamiento en navegadores WebKit */
-  width: 12px; /* Ancho de la barra de desplazamiento */
-}
-
-#cuadros_estadisticas::-webkit-scrollbar-track {
-  /* Estilos para la pista de la barra de desplazamiento */
-  background: rgb(227, 226, 226); /* Color de fondo */
-  border-radius: 40px; /* Radio de borde */
-}
-
-#cuadros_estadisticas::-webkit-scrollbar-thumb {
-  background-color: #bdbaba;
-  border-radius: 40px;
-  
-}
 
 
 .partido{
@@ -226,21 +221,18 @@ footer{
 }
 
 #sin_datos {
-  width: 400px;
+  width: 600px;
   margin: 20px auto;
-  padding: 15px;
+  padding: 5px;
   border-radius: 10px;
   color: #FFFFFF;
-  font-size: 12px;
-  font-weight: 200;
+  font-size: 18px;
+  font-weight: 300;
   text-align: center;
   background-color: var(--grafica-amarillo);
 }
 
-#sin_datos img {
-  width: 60%;
-  height: 60%;
-}
+
 
 
 
