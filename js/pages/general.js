@@ -196,38 +196,46 @@ function filtrarInformacion() {
         })
         .then(data => {
             datosJSON2 = data;
-            console.log(datosJSON2);
-            cargarDatos();
-            mostrarMensaje("verde-cargado");
-            //agregamos al dom los nombres de los partidos politicos
-            const barras = document.getElementById("grid");
-            const divAgrupaciones = document.createElement("div")
-            document.getElementById("estadisticas_partidos").appendChild(divAgrupaciones)
-            let indice = 0;
-            
-            data.valoresTotalizadosPositivos.forEach(partido => {
-                console.log(partido)
-                console.log(partido.nombreAgrupacion)
-                let divPartido = document.createElement("div")
-                divPartido.classList.add("partido")
-                divPartido.innerHTML = 
-                `<h4 class="partido_nombre">${partido.nombreAgrupacion}</h4>
-                <h4 class="partido_porcentaje">${partido.votosPorcentaje}%</h4>
-                <h4 class="partido_votos">${partido.votos}  VOTOS</h4>
-                <label class="barra_porcentaje barras" style="width: ${partido.votosPorcentaje}%; background: ${colores[indice % colores.length].color};"></label>
-                <label class="barra_fondo barras" style="background: ${colores[indice % colores.length].colorClaro}"></label>`
-
-
-
-                divAgrupaciones.appendChild(divPartido)
-                const bar = `<div class="bar" style="--bar-value:${partido.votosPorcentaje}%;" data-name="${partido.nombreAgrupacion}" title="${partido.nombreAgrupacion} ${partido.votosPorcentaje}%"></div>`;
-                barras.innerHTML += bar;
-                indice++;
-
-                let secBlank = document.getElementById('blank');
-                secBlank.style.display = 'none';
+          console.log(datosJSON2);
+          cargarDatos();
+          mostrarMensaje("verde-cargado");
+          
+          // Ordenar los datos por cantidad de votos de mayor a menor
+          const partidosOrdenados = data.valoresTotalizadosPositivos.sort((a, b) => b.votos - a.votos);
+      
+          // Agregamos al DOM los nombres de los 7 partidos políticos con más votos
+          const barras = document.getElementById("grid");
+          const divAgrupaciones = document.createElement("div");
+          document.getElementById("estadisticas_partidos").appendChild(divAgrupaciones);
+          
+          let indice = 0;
+          let limite = 7; // Establecemos el límite en 7
+      
+          for (let i = 0; i < partidosOrdenados.length && i < limite; i++) {
+              let partido = partidosOrdenados[i];
+              console.log(partido);
+              console.log(partido.nombreAgrupacion);
+      
+              let divPartido = document.createElement("div");
+              divPartido.classList.add("partido");
+              divPartido.innerHTML = 
+                  `<h4 class="partido_nombre">${partido.nombreAgrupacion}</h4>
+                  <h4 class="partido_porcentaje">${partido.votosPorcentaje}%</h4>
+                  <h4 class="partido_votos">${partido.votos}  VOTOS</h4>
+                  <label class="barra_porcentaje barras" style="width: ${partido.votosPorcentaje}%; background: ${colores[indice % colores.length].color};"></label>
+                  <label class="barra_fondo barras" style="background: ${colores[indice % colores.length].colorClaro}"></label>`;
+      
+              divAgrupaciones.appendChild(divPartido);
+      
+              const bar = `<div class="bar" style="--bar-value:${partido.votosPorcentaje}%;" data-name="${partido.nombreAgrupacion}" title="${partido.nombreAgrupacion} ${partido.votosPorcentaje}%"></div>`;
+              barras.innerHTML += bar;
+              indice++;
+          }
+      
+          let secBlank = document.getElementById('blank');
+          secBlank.style.display = 'none';
+        
             })
-        })
         .catch(error => {
             mostrarMensaje("amarillo-no-cargado");
         });
