@@ -14,7 +14,7 @@ let seccionTexto = "";
 const periodosSelect = document.getElementById("periodoSelect");
 const idCargo= document.getElementById("cargoSelect");
 const idDistritoOption  = document.getElementById("distritoSelect");
-var selectSeccion = document.getElementById('select-seccion');
+const selectSeccion = document.getElementById('select-seccion');
 
 const url = "https://resultados.mininterior.gob.ar/api/menu";
 const urlPeriodos = "https://resultados.mininterior.gob.ar/api/menu/periodos";
