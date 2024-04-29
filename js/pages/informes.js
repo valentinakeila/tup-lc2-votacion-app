@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function cargarDatosInformes() {
   let cuadroInformes = document.getElementById("cuadro-informes");
-  count = 0;
+  count = 0; 
 
   jsonStorage.forEach((element) => {
     cuadroInformes.innerHTML += `
