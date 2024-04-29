@@ -125,6 +125,7 @@ function seleccionarSeccion() {
         
 
         console.log(selectedDistrito.options[selectedDistrito.selectedIndex].text) // debería solo logear "ARGENTINA"
+
     }
 }
 
@@ -177,8 +178,8 @@ function filtrarInformacion() {
     else {
         seccionTexto = selectedSeccion.textContent
     }
-    let tipoEleccionGlobal = tipoEleccion; // Asegúrate de que esta variable está definida correctamente en tu script
-    let circuitoIdGlobal = circuitoId; // Asegúrate de que esta variable está definida correctamente en tu script
+    let tipoEleccionGlobal = tipoEleccion; 
+    let circuitoIdGlobal = circuitoId; 
     let mesaIdGlobal = mesaId;
 
     crearTitulo(seccionTexto);
